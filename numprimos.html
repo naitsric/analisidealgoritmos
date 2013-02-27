@@ -1,0 +1,46 @@
+<html>
+
+<head>Es o no es Numero Primo? 
+</head>
+<br>
+<body>
+<script type="text/javascript">
+console.time("t1");
+
+num=parseFloat(12);
+var num = prompt ('ingrese un numer',' ');
+//debugger;
+document.write('<br>');
+
+document.write('El numero ingresado es :'+num);
+
+document.write('<br>');
+
+var inicio= new Date;
+inicio=(inicio.getSeconds());
+
+function esPrimo(num) {
+    var i=2;
+    while (i*i<=num) {
+        if (num%i == 0) 
+	return(false);
+        i++;
+    }
+        return(true);
+}
+  
+document.write("el numero es = "+esPrimo(num));
+
+var final= new Date;
+final=(final.getSeconds());
+var tiempo=('timepo total'+String((parseFloat(final)-parseFloat(inicio))));
+
+document.write('<br>');
+document.write ('se demoro :'+tiempo);
+
+console.timeEnd("t1");
+</script>
+//https://github.com/naitsric/analisidealgoritmos
+</body>
+
+</html> 
