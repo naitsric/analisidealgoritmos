@@ -1,0 +1,43 @@
+<html>
+
+<head>Factorial de cualquier numero  
+</head>
+<br>
+<body>
+<script type="text/javascript">
+console.time("t1");
+
+num=parseFloat(12);
+var num = prompt ('ingrese un numer',' ');
+//debugger;
+document.write('<br>');
+
+document.write('El numero ingresado es :'+num);
+
+document.write('<br>');
+
+var inicio= new Date;
+inicio=(inicio.getSeconds());
+//var inicio =microtime(true);
+//console.time('Test tiempo');
+fact = 1;
+while  (num>0)
+{ fact = fact * num;
+  num = num - 1 ;
+}
+document.write("el factorial es = " +fact);
+//console.timeEnd('Test tiempo');
+//var final= microtime(true);
+//document.write('el tiempo total es :'+(final-inicio));
+var final= new Date;
+final=(final.getSeconds());
+var tiempo=('timepo total'+String((parseFloat(final)-parseFloat(inicio))));
+
+document.write ('se demoro :'+tiempo);
+
+console.timeEnd("t1");
+</script>
+
+</body>
+
+</html> 
