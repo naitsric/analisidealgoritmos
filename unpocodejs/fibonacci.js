@@ -9,13 +9,14 @@ var fibo = {
 			var tem = this.sum(ini,more);
 			ini = more;
 			more = tem;
-			//console.log(tem);
+			console.log(i+" "+tem);
 			i++
-			if(i>10000){
+			if(i>1475){
 				flag = false;
 			}
 		}
 		console.timeEnd("t1");
+		alert(tem);
 	},
 	sum: function(ini,mor){
 		return ini+mor;
