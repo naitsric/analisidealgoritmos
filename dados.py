@@ -15,7 +15,6 @@ class Dados:
 		i = 0
 		while flag:
 			print "---------------------------------------------------------------------"
-			#raw_input("Jugador 1: ")
 			pt1 = self.jugar()
 			print "Puntaje Player 1: " + str(pt1)
 			tmFlag = True

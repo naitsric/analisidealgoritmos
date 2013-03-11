@@ -6,6 +6,7 @@ class Pi:
 		flag = False
 		pi = float(4)
 		nround = self.Nround(limite)
+		print "It \t\t Num"
 		while True:
 			#print "--------------------------------"
 			if flag:
@@ -15,6 +16,7 @@ class Pi:
 				pi = pi - (4/i)
 				flag = True
 			i = i+2
+			print str(j)+" \t\t "+str(pi)
 			#print round(pi,nround)
 			#print limite
 			if round(pi,nround) == limite:

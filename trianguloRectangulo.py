@@ -5,9 +5,11 @@ class TrianguloRec:
 		else:
 			print "No, no es un Triangulo Rectangulo"
 
+Lista = []
+Lista.append(raw_input("Digite el Primer Lado: "))
+Lista.append(raw_input("Digite el Segundo Lado: "))
+Lista.append(raw_input("Digite el Tercer Lado: "))
 
-cateto1 = raw_input("Digite el Primer Cateto: ")
-cateto2 = raw_input("Digite el Segundo Cateto: ")
-hipotenusa = raw_input("Digite la hipotenusa: ")
+Lista2 = sorted(Lista)
 
-TrianguloRec(int(cateto1),int(cateto2),int(hipotenusa))
+TrianguloRec(int(Lista2[0]),int(Lista2[1]),int(Lista2[2]))
