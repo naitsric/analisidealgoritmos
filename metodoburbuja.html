@@ -1,0 +1,61 @@
+<html>
+
+<head>Metodo Burbuja
+</head>
+<br>
+<body>
+<script language="JavaScript">
+
+function cargar(DATOS)
+{
+
+var num=prompt('Ingrese un numero','');
+//deben llenarse por random, y la catnidad de numero de ramdom un lo cambia 
+document.write('<br>');
+var f;
+for(f=0;f<num.length;f++)
+{
+DATOS[f]=Math.random()*num;
+}
+
+}
+
+function calcular(DATOS)
+{
+
+var num;
+var reco;
+var sapok;
+
+for (reco<=k.length-1; reco>=0; reco--)
+ 		{
+      		for (compa=0; compa<=k.length-2; compa++)
+         			{
+         	 			if (DATOS[compa] > DATOS[compa+1])
+          		{
+ 		            	sapok = DATOS[compa+1];
+			            DATOS[compa+1] = DATOS[compa];
+	 		            DATOS[compa] = sapok;
+	 		            inter = inter+1;
+          		};
+      		};
+  		};
+ 
+//  // IMPRESION DE DATOS DEL ARREGLO   
+// for (k=0; k<num.length; k++) 
+// 	{
+//    		document.write(DATOS[k]) 
+//  	};
+
+}
+
+cargar(DATOS);
+calcular(DATOS);
+ 
+
+ 
+</script>
+
+</body>
+
+</html> 
