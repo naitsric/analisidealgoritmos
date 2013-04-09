@@ -1,0 +1,32 @@
+<html>
+
+<head>Metodo Shell
+</head>
+<br>
+<body>
+<script language="JavaScript">
+
+var a=prompt('Ingrese un numero','');
+//deben llenarse por random, y la catnidad de numero de ramdom un lo cambia 
+document.write('<br>');
+
+document.write('El numero ingresado es :'+a);
+
+document.write('<br>');
+
+for (k=1; k<a.length; k++) 
+ 		{
+   			tmp=a[k]
+ 		};
+for (j=k-1; j>=0 && a[j]>tmp;j--)
+		{
+     		
+      a[j+1]=a[j];
+ 		};
+ 
+ 
+</script>
+
+</body>
+
+</html> 
