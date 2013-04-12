@@ -4,55 +4,44 @@
 <br>
 <body>
 <script language="JavaScript">
+  function cargar(DATOS,num){
+  //deben llenarse por random, y la catnidad de numero de ramdom un lo cambia 
+    document.write('<br>');
+    var f;
+    for(f=0;f<(num);f++){
+      DATOS.push(parseInt(Math.random()*10000));
+    }
+    console.log(DATOS);
+    calcular(DATOS,num);
+    console.log(DATOS);
 
+  }
 
+  function calcular(DATOS,num){
+    var reco=1;
+    var sapok=0;
+    var inter=0;
+    itera=0;
+    console.time("t1");
+    for (reco=1; reco<num; reco++){
+      for (compa=0; compa<=num-1; compa++){
+        itera++;
+        if (DATOS[compa] > DATOS[compa+1]){
+          sapok = DATOS[compa];
+          DATOS[compa] = DATOS[compa+1];
+          DATOS[compa+1] = sapok;
+          inter = inter+1;
+        }
+      }
+    }
+    console.timeEnd("t1");
+    console.log("iteraciones: "+itera);
+  }
 
-
-function cargar(DATOS)
-{
+  var num;
+  var DATOS = new Array();
   var num=parseInt(prompt('Ingrese un numero',''));
-//deben llenarse por random, y la catnidad de numero de ramdom un lo cambia 
-  document.write('<br>');
-  var f;
-  for(f=0;f<(num);f++)
-    {
-      DATOS.push(parseInt(Math.random()*100));
-   }
-
-
-}
-
-function calcular(DATOS)
-{
-
-  var reco=1;
-  var sapok=0;
-  var inter=0;
-debugger;  
-for (reco=1; reco<num; reco++)
- 		{
-      		for (compa=0; compa<=num-1; compa++)
-         			{
-         	 			if (DATOS[compa] > DATOS[compa+1])
-          		{
- 		            	sapok = DATOS[compa];
-			            DATOS[compa] = DATOS[compa+1];
-	 		            DATOS[compa+1] = sapok;
-	 		            inter = inter+1;
-          		};
-      		};
-  		};
- 
-}
-
-var DATOS = new Array();
-var num;
-console.log(DATOS);
-cargar(DATOS);
-console.log(DATOS);
-calcular(DATOS);
-console.log(DATOS);
- 
+  cargar(DATOS,num);
 </script>
 
 </body>

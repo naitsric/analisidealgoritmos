@@ -11,9 +11,7 @@ class shellSort:
 			min = "1"+min
 			max = "9"+max
 		for x in xrange(0,nPos):
-			print x
 			self.coleccion.append(random.randrange(int(min),int(max)))
-		print self.coleccion
 		self.ordenamiento(self.coleccion)
 
 	def ordenamiento(self,coleccion):
