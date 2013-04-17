@@ -3,7 +3,7 @@ import random
 from time import clock, time
 from datetime import timedelta
 class shellSort:
-	def __init__(self,nDigitos,nPos):
+	def __init__(self):
 		self.coleccion = []
 		# min = ""
 		# max = ""
@@ -16,16 +16,16 @@ class shellSort:
 		archi = open("Random.txt",'r')
 		string = archi.read()
 		self.coleccion = string.split(",")
-		print self.coleccion
+		
 		self.ordenamiento(self.coleccion)
-		print self.coleccion
+		
 
 	def ordenamiento(self,coleccion):
 		nitera = 0
 		d = timedelta(microseconds=-1)
-		archi = open("Insert "+str(d.days)+" "+str(d.seconds)+" "+str(d.microseconds)+".txt",'a')
-		archi.write(str(coleccion))
-		archi.write("-------------------------------------------------------")
+		#archi = open("Insert "+str(d.days)+" "+str(d.seconds)+" "+str(d.microseconds)+".txt",'a')
+		#archi.write(str(coleccion))
+		#archi.write("-------------------------------------------------------")
 		start_time = time()
 		n = len(coleccion)
 		for i in range(n):
@@ -38,12 +38,12 @@ class shellSort:
 			coleccion[a+1] = indice
 		print time() - start_time, "seconds"
 		print nitera, "iteraciones"
-		archi.write(str(coleccion))
-		archi.close()
+		#archi.write(str(coleccion))
+		#archi.close()
 		#print coleccion
 
 
 
-nDigitos = raw_input("Numero de Digitos: ")
-nPos = raw_input("Numero de Posiciones: ")
-shellSort(int(nDigitos),int(nPos))
+#nDigitos = raw_input("Numero de Digitos: ")
+#nPos = raw_input("Numero de Posiciones: ")
+shellSort()
