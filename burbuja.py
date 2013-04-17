@@ -15,37 +15,27 @@ class shellSort:
 		self.ordenamiento(self.coleccion)
 
 	def ordenamiento(self,coleccion):
-		print coleccion
 		nitera = 0
 		d = timedelta(microseconds=-1)
-		archi = open("Select "+str(d.days)+" "+str(d.seconds)+" "+str(d.microseconds)+".txt",'a')
+		archi = open("shellSort"+str(d.days)+" "+str(d.seconds)+" "+str(d.microseconds)+".txt",'a')
 		archi.write(str(coleccion))
-		#print coleccion
 		archi.write("-------------------------------------------------------")
 		start_time = time()
-		n = len(coleccion)
-		for i in range(1,n-1,2):
-			#print "i: "+str(i)
-			#i = i+1
-			print "i: ->"+str(i)
-			k = i
-			t = coleccion[i]
-			
-			for j in range(i,n,2):
-				#print "j: "+str(j)
-				#j = j+1
-				print "j: ->"+str(j)
-				nitera = nitera+1
-				if coleccion[j] < t:
-					k = j
-					t = coleccion[j]
-			coleccion[k] = coleccion[i]
-			coleccion[i] = t
+		incremento = len(coleccion)/2
+		while incremento:
+			for i in xrange(len(coleccion)):
+				j = i
+				temp = coleccion[i]
+				while j>= incremento and coleccion[j-incremento]>temp:
+					coleccion[j] = coleccion[j-incremento]
+					j -= incremento
+					nitera = nitera+1
+				coleccion[j] = temp
+			incremento = incremento/2 if incremento/2 else (0 if incremento==1 else 1)
 		print time() - start_time, "seconds"
 		print nitera, "iteraciones"
 		archi.write(str(coleccion))
 		archi.close()
-		print coleccion
 
 
 

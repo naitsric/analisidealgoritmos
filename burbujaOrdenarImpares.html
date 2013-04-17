@@ -1,0 +1,65 @@
+<html>
+<head>Metodo Burbuja
+</head>
+<br>
+<body>
+<script language="JavaScript">
+  function cargar(DATOS,num){
+  //deben llenarse por random, y la catnidad de numero de ramdom un lo cambia 
+    document.write('<br>');
+    var f;
+    for(f=0;f<(num);f++){
+      DATOS.push(parseInt(Math.random()*10000));
+    }
+    console.log(DATOS);
+    document.write("Array Generado sin ordenar: <br> ");
+    document.write(DATOS);
+    document.write("<br> ");
+    calcular(DATOS,num);
+    document.write("Array Generado ordenando las posiciones impares: <br> ");
+    document.write(DATOS);
+    document.write("<br> ");
+    console.log(DATOS);
+    document.write("Imprimiendo solo los impares: <br> ");
+    printArray(DATOS,num);
+    document.write("<br> ");
+
+  }
+
+  function calcular(DATOS,num){
+    var reco=1;
+    var sapok=0;
+    var inter=0;
+    itera=0;
+    console.time("t1");
+    for (reco=1; reco<num; reco=reco+2){
+      for (compa=1; compa<=num-2; compa=compa+2){
+        itera++;
+        if (DATOS[compa] > DATOS[compa+2]){
+          sapok = DATOS[compa];
+          DATOS[compa] = DATOS[compa+2];
+          DATOS[compa+2] = sapok;
+          inter = inter+1;
+        }
+      }
+    }
+    console.timeEnd("t1");
+    console.log("iteraciones: "+itera);
+  }
+  function printArray (DATOS,num) {
+    for (reco=1; reco<num; reco=reco+2){
+
+      console.log(DATOS[reco]+" -> index:"+reco);
+      document.write("index: "+reco+" - value: "+DATOS[reco]+"<br>");
+    }
+  }
+
+  var num;
+  var DATOS = new Array();
+  var num=parseInt(prompt('Ingrese un numero',''));
+  cargar(DATOS,num);
+</script>
+
+</body>
+
+</html> 
