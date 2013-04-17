@@ -5,14 +5,19 @@ from datetime import timedelta
 class shellSort:
 	def __init__(self,nDigitos,nPos):
 		self.coleccion = []
-		min = ""
-		max = ""
-		for n in xrange(1,nDigitos):
-			min = "1"+min
-			max = "9"+max
-		for x in xrange(0,nPos):
-			self.coleccion.append(random.randrange(int(min),int(max)))
+		# min = ""
+		# max = ""
+		# for n in xrange(1,nDigitos):
+		# 	min = "1"+min
+		# 	max = "9"+max
+		# for x in xrange(0,nPos):
+		# 	self.coleccion.append(random.randrange(int(min),int(max)))
+		archi = open("Random.txt",'r')
+		string = archi.read()
+		self.coleccion = string.split(",")
+		print self.coleccion
 		self.ordenamiento(self.coleccion)
+		print self.coleccion
 
 	def ordenamiento(self,coleccion):
 		print coleccion
